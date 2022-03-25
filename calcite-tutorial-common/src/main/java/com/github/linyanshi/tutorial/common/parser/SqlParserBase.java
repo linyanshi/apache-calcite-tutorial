@@ -10,7 +10,7 @@ import org.apache.calcite.sql.parser.SqlParser;
  */
 public class SqlParserBase {
 
-    public static SqlParser.Config MYSQL = SqlParser.configBuilder().setLex(Lex.MYSQL).build();
+    public static SqlParser.Config MYSQL = SqlParser.config().withLex(Lex.MYSQL);
 
     public SqlNode parseQuery(String sql) throws Exception {
         SqlParser parser = SqlParser.create(sql, MYSQL);
@@ -18,7 +18,6 @@ public class SqlParserBase {
     }
 
     public SqlNode parseQuery(String sql, SqlParser.Config config) throws Exception {
-        SqlParser.configBuilder().build();
         SqlParser parser = SqlParser.create(sql, config);
         return parser.parseQuery();
     }

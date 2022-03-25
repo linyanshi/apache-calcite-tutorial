@@ -38,7 +38,7 @@ public class RuleTester {
 
     public static void printOriginalCompare(String sql, HepProgramBuilder builder, RelOptRule... rules) {
         try {
-            SqlParser.Config mysql = SqlParser.configBuilder().setLex(Lex.MYSQL).setCaseSensitive(false).build();
+            SqlParser.Config mysql = SqlParser.config().withLex(Lex.MYSQL).withCaseSensitive(false);
             SqlToRelConverter.Config aDefault = SqlToRelConverterBase.DEFAULT;
 
             SqlParserBase sqlParserBase = new SqlParserBase();
@@ -77,7 +77,7 @@ public class RuleTester {
      */
     public static void printRuleCompare(String sql, List<RelOptRule> preRules, List<RelOptRule> rules) {
         try {
-            SqlParser.Config mysql = SqlParser.configBuilder().setLex(Lex.MYSQL).setCaseSensitive(false).build();
+            SqlParser.Config mysql = SqlParser.config().withLex(Lex.MYSQL).withCaseSensitive(false);
             SqlToRelConverter.Config aDefault = SqlToRelConverterBase.DEFAULT;
 
             SqlParserBase sqlParserBase = new SqlParserBase();
@@ -135,7 +135,7 @@ public class RuleTester {
             System.out.println("sql:");
             System.out.println(sql);
             System.out.println();
-            SqlParser.Config mysql = SqlParser.configBuilder().setLex(Lex.MYSQL).setCaseSensitive(false).build();
+            SqlParser.Config mysql = SqlParser.config().withLex(Lex.MYSQL).withCaseSensitive(false);
             SqlToRelConverter.Config aDefault = SqlToRelConverterBase.DEFAULT;
 
             SqlParserBase sqlParserBase = new SqlParserBase();

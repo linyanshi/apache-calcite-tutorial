@@ -134,8 +134,7 @@ public class LysParser implements Parser {
             caseSensitive = sqlParserConfig.caseSensitive();
         }
 
-        SqlParser.Config newSqlParserConfig =
-                SqlParser.configBuilder(sqlParserConfig).setCaseSensitive(caseSensitive).build();
+        SqlParser.Config newSqlParserConfig =sqlParserConfig.withCaseSensitive(caseSensitive);
 
         SchemaPlus rootSchema = getRootSchema(this.rootSchema.plus());
         return new LysCalciteCatalogReader(

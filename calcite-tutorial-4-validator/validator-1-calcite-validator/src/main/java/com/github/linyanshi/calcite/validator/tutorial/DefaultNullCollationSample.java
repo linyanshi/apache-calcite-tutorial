@@ -35,7 +35,7 @@ public class DefaultNullCollationSample {
         CalciteServerStatement statement = connection.createStatement().unwrap(CalciteServerStatement.class);
         CalcitePrepare.Context prepareContext = statement.createPrepareContext();
         // 解析配置 - mysql设置
-        SqlParser.Config mysqlConfig = SqlParser.configBuilder().setLex(Lex.MYSQL).build();
+        SqlParser.Config mysqlConfig = SqlParser.config().withLex(Lex.MYSQL);
         // 创建解析器
         SqlParser parser = SqlParser.create("", mysqlConfig);
         // Sql语句

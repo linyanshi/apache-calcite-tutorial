@@ -853,11 +853,8 @@ import org.apache.calcite.sql.parser.SqlParser;
 public class SqlCreateFunctionMain {
     public static void main(String[] args) throws SqlParseException {
         // 解析配置 - mysql设置
-        SqlParser.Config mysqlConfig = SqlParser.configBuilder()
-                // 定义解析工厂
-                .setParserFactory(CustomSqlParserImpl.FACTORY)
-                .setLex(Lex.MYSQL)
-                .build();
+        SqlParser.Config mysqlConfig = SqlParser.config().
+                withLex(Lex.MYSQL).withParserFactory(CustomSqlParserImpl.FACTORY);
         // 创建解析器
         SqlParser parser = SqlParser.create("", mysqlConfig);
         // Sql语句

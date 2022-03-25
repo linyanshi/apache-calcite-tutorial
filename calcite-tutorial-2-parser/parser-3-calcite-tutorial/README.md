@@ -28,7 +28,7 @@ public class SqlParserSample {
         // Sql语句
         String sql = "select * from emps where id = 1";
         // 解析配置
-        SqlParser.Config mysqlConfig = SqlParser.configBuilder().setLex(Lex.MYSQL).build();
+        SqlParser.Config mysqlConfig = SqlParser.config().withLex(Lex.MYSQL);
         // 创建解析器
         SqlParser parser = SqlParser.create(sql, mysqlConfig);
         // 解析sql
@@ -41,7 +41,7 @@ public class SqlParserSample {
 
 ### 解析流程
 
-1. 首先生成SQL解析器`SqlParser.Config`,`SqlParser.Config`中存在获取解析工厂类`SqlParser.Config#parserFactory()`方法,可以在`SqlParser.configBuilder()`配置类中设置解析工厂
+1. 首先生成SQL解析器`SqlParser.Config`,`SqlParser.Config`中存在获取解析工厂类`SqlParser.Config#parserFactory()`方法,可以在`SqlParser.config()`配置类中设置解析工厂
 2. `SqlParserImplFactory`解析工厂中调用`getParser`方法获取解析器
 3. `SqlAbstractParserImpl`抽象解析器,JavaCC中生成的解析器的父类,Calcite中默认的解析类名为`SqlParserImpl`
 4. `SqlParserImpl`中,有静态字段`FACTORY`,主要是实现`SqlParserImplFactory`,并创建解析器

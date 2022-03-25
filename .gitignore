@@ -1,2 +1,8 @@
 /.idea/
 /calcite-tutorial-5-runtime/calcite-tutorial-5-runtime.iml
+/calcite-tutorial-common/calcite-tutorial-common.iml
+/calcite-tutorial-9-rule/calcite-tutorial-9-rule.iml
+/calcite-tutorial-4-validator/validator-1-calcite-validator/validator-1-calcite-validator.iml
+/calcite-tutorial-3-schema/calcite-tutorial-3-schema.iml
+/calcite-tutorial-2-parser/parser-3-calcite-tutorial/parser-3-calcite-tutorial.iml
+/calcite-tutorial-2-parser/parser-4-calcite-custom-tutorial/parser-4-calcite-custom-tutorial.iml
